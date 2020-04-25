@@ -1,0 +1,13 @@
+int led = D7; // this is for inbuilt LED
+void setup() {
+    pinMode(led, OUTPUT);
+}
+
+void loop() {
+    digitalWrite(led, HIGH); //HIGH will turn on the LED
+    String temp = String(random(60, 80));
+    Particle.publish("temp", temp, PRIVATE);
+    delay(5000); //this is equal to 1 second
+    digitalWrite(led, LOW); //LOW will turn off the LED
+    delay(5000); 
+}
